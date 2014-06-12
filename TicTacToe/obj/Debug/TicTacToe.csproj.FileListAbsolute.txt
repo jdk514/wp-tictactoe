@@ -12,3 +12,17 @@ c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\obj\Debu
 c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\obj\Debug\XapCacheFile.xml
 c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\Bin\Debug\Microsoft.Phone.Controls.dll
 c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Users\Joel\Documents\GitHub\tictactoe\TicTacToe\Bin\Debug\ApplicationIcon.png
+C:\Users\Joel\Documents\GitHub\tictactoe\TicTacToe\Bin\Debug\Background.png
+C:\Users\Joel\Documents\GitHub\tictactoe\TicTacToe\Bin\Debug\TicTacToe.dll
+C:\Users\Joel\Documents\GitHub\tictactoe\TicTacToe\Bin\Debug\TicTacToe.pdb
+C:\Users\Joel\Documents\GitHub\tictactoe\TicTacToe\Bin\Debug\AppManifest.xaml
+C:\Users\Joel\Documents\GitHub\tictactoe\TicTacToe\Bin\Debug\TicTacToe.xap
+C:\Users\Joel\Documents\GitHub\tictactoe\TicTacToe\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Users\Joel\Documents\GitHub\tictactoe\TicTacToe\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Users\Joel\Documents\GitHub\tictactoe\TicTacToe\obj\Debug\App.g.i.cs
+C:\Users\Joel\Documents\GitHub\tictactoe\TicTacToe\obj\Debug\MainPage.g.i.cs
+C:\Users\Joel\Documents\GitHub\tictactoe\TicTacToe\obj\Debug\TicTacToe.g.resources
+C:\Users\Joel\Documents\GitHub\tictactoe\TicTacToe\obj\Debug\TicTacToe.dll
+C:\Users\Joel\Documents\GitHub\tictactoe\TicTacToe\obj\Debug\TicTacToe.pdb
+C:\Users\Joel\Documents\GitHub\tictactoe\TicTacToe\obj\Debug\XapCacheFile.xml

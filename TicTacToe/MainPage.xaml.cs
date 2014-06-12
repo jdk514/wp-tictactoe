@@ -24,24 +24,20 @@ namespace TicTacToe {
         public MainPage() {
             InitializeComponent();
             //Define the TTT Grid/Connections
-            Boxes["UL"].Horizontal = Boxes["UC"]; Boxes["UL"].Vertical = Boxes["ML"]; Boxes["UL"].Diagnol = Boxes["MC"];
-            Boxes["UC"].Left = Boxes["UL"]; Boxes["UC"].Right = Boxes["UR"]; Boxes["UC"].Vertical = Boxes["MC"];
-            Boxes["UR"].Horizontal = Boxes["UC"]; Boxes["UR"].Vertical = Boxes["MR"]; Boxes["UR"].Diagnol = Boxes["MC"];
-            Boxes["ML"].Up = Boxes["UL"]; Boxes["ML"].Down = Boxes["DL"]; Boxes["ML"].Horizontal = Boxes["MC"];
-            Boxes["MC"].Up = Boxes["UC"]; Boxes["MC"].Down = Boxes["DC"]; Boxes["MC"].Left = Boxes["ML"]; Boxes["MC"].Right = Boxes["MR"]; Boxes["MC"].UpLeft = Boxes["UL"]; Boxes["MC"].UpRight = Boxes["UR"]; Boxes["MC"].DownLeft = Boxes["DL"]; Boxes["MC"].DownRight = Boxes["DR"];
-            Boxes["MR"].Up = Boxes["UR"]; Boxes["MR"].Down = Boxes["DR"]; Boxes["MR"].Horizontal = Boxes["MC"];
-            Boxes["DL"].Horizontal = Boxes["DC"]; Boxes["DL"].Vertical = Boxes["ML"]; Boxes["DL"].Diagnol = Boxes["MC"];
-            Boxes["DC"].Left = Boxes["DL"]; Boxes["DC"].Right = Boxes["DR"]; Boxes["DC"].Vertical = Boxes["MC"];
-            Boxes["DR"].Horizontal = Boxes["DC"]; Boxes["DR"].Vertical = Boxes["MR"]; Boxes["DR"].Diagnol = Boxes["MC"];
-            
+            Boxes["UL"].Horizontal = new TTT_Box[] {Boxes["UC"], Boxes["UL"]}; Boxes["UL"].Vertical = new TTT_Box[] {Boxes["ML"], Boxes["DL"]}; Boxes["UL"].Diagnol = new TTT_Box[] {Boxes["MC"], Boxes["DR"]};
+            Boxes["UC"].Horizontal = new TTT_Box[] {Boxes["UL"], Boxes["UR"]}; Boxes["UC"].Vertical = new TTT_Box[] {Boxes["MC"], Boxes["DC"]};
+            Boxes["UR"].Horizontal = new TTT_Box[] {Boxes["UC"], Boxes["UL"]}; Boxes["UR"].Vertical = new TTT_Box[] {Boxes["MR"], Boxes["DR"]}; Boxes["UR"].Diagnol = new TTT_Box[] {Boxes["MC"], Boxes["DL"]};
+            Boxes["ML"].Vertical = new TTT_Box[] {Boxes["UL"], Boxes["DL"]}; Boxes["ML"].Horizontal = new TTT_Box[] {Boxes["MC"], Boxes["MR"]};
+            Boxes["MC"].Vertical = new TTT_Box[] {Boxes["UC"], Boxes["MC"]}; Boxes["MC"].Horizontal = new TTT_Box[] {Boxes["ML"], Boxes["MC"]}; Boxes["MC"].Diagnol = new TTT_Box[] {Boxes["UL"], Boxes["DR"]}; Boxes["MC"].Diagnol2 = new TTT_Box[] {Boxes["UR"], Boxes["DL"]};
+            Boxes["MR"].Vertical = new TTT_Box[] {Boxes["UR"], Boxes["MR"]}; Boxes["MR"].Horizontal = new TTT_Box[] {Boxes["MC"], Boxes["ML"]};
+            Boxes["DL"].Horizontal = new TTT_Box[] {Boxes["DC"], Boxes["DR"]}; Boxes["DL"].Vertical = new TTT_Box[] {Boxes["ML"], Boxes["UL"]}; Boxes["DL"].Diagnol = new TTT_Box[] {Boxes["MC"], Boxes["UR"]};
+            Boxes["DC"].Horizontal = new TTT_Box[] {Boxes["DL"], Boxes["DR"]}; Boxes["DC"].Vertical = new TTT_Box[] {Boxes["MC"], Boxes["UC"]};
+            Boxes["DR"].Horizontal = new TTT_Box[] {Boxes["DC"], Boxes["DL"]}; Boxes["DR"].Vertical = new TTT_Box[] {Boxes["MR"], Boxes["UR"]}; Boxes["DR"].Diagnol = new TTT_Box[] {Boxes["MC"], Boxes["UL"]};
         }
 
         public class TTT_Box {
             public string mark;
-            public TTT_Box Up; public TTT_Box Down; public TTT_Box Left;
-            public TTT_Box Right; public TTT_Box UpRight; public TTT_Box UpLeft;
-            public TTT_Box DownRight; public TTT_Box DownLeft;
-            public TTT_Box Diagnol; public TTT_Box Horizontal; public TTT_Box Vertical;
+            public TTT_Box[] Diagnol; public TTT_Box[] Horizontal; public TTT_Box[] Vertical; public TTT_Box[] Diagnol2;
 
             public string get_mark() {
                 return mark;
@@ -81,7 +77,7 @@ namespace TicTacToe {
 
         public class TTT_Box_HoriEdge : TTT_Box {
             public override Boolean check_TTT() {
-                if (check_boxes(this.Left, this.Right) || check_boxes(this.Vertical, this.Vertical.Vertical)) {
+                if (check_boxes(this.Horizontal[0], this.Horizontal[1]) || check_boxes(this.Vertical[0], this.Vertical[1])) {
                     return true;
                 }
                 return false;
@@ -90,7 +86,7 @@ namespace TicTacToe {
 
         public class TTT_Box_VertEdge : TTT_Box {
             public override Boolean check_TTT() {
-                if (check_boxes(this.Up, this.Down) || check_boxes(this.Horizontal, this.Horizontal.Horizontal)) {
+                if (check_boxes(this.Vertical[0], this.Vertical[1]) || check_boxes(this.Horizontal[0], this.Horizontal[1])) {
                     return true;
                 }
                 return false;
@@ -99,7 +95,7 @@ namespace TicTacToe {
 
         public class TTT_Box_Corner : TTT_Box {
             public override Boolean check_TTT() {
-                if (check_boxes(this.Horizontal, this.Horizontal.Horizontal) || check_boxes(this.Vertical, this.Vertical.Vertical) || check_boxes(this.Diagnol, this.Diagnol.Diagnol)) {
+                if (check_boxes(this.Horizontal[0], this.Horizontal[1]) || check_boxes(this.Vertical[0], this.Vertical[1]) || check_boxes(this.Diagnol[0], this.Diagnol[1])) {
                     return true;
                 }
                 return false;
@@ -108,7 +104,7 @@ namespace TicTacToe {
 
         public class TTT_Box_Center : TTT_Box {
             public override Boolean check_TTT() {
-                if (check_boxes(this.Left, this.Right) || check_boxes(this.Down, this.Up) || check_boxes(this.UpLeft, this.DownRight) || check_boxes(this.UpRight, this.DownLeft)) {
+                if (check_boxes(this.Horizontal[0], this.Horizontal[1]) || check_boxes(this.Vertical[0], this.Vertical[1]) || check_boxes(this.Diagnol[0], this.Diagnol[1]) || check_boxes(this.Diagnol2[0], this.Diagnol[1])) {
                     return true;
                 }
                 return false;
@@ -127,6 +123,12 @@ namespace TicTacToe {
         }
 
         private void winner_popup_btn(object sender, RoutedEventArgs e) {
+            UL.Content = ""; UC.Content = ""; UR.Content = "";
+            ML.Content = ""; MC.Content = ""; MR.Content = "";
+            DL.Content = ""; DC.Content = ""; DR.Content = "";
+            foreach (KeyValuePair <string, TTT_Box> box in Boxes) {
+                box.Value.mark = null;
+            }
             winner_popup.IsOpen = false;
         }
     }
