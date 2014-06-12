@@ -129,11 +129,6 @@ namespace TicTacToe {
             foreach (KeyValuePair <string, TTT_Box> box in Boxes) {
                 box.Value.mark = null;
             }
-            if (turn == "X") {
-                winner_text.Text = "Winnner is O";
-            } else {
-                winner_text.Text = "Winner is X";
-            }
             winner_popup.IsOpen = false;
         }
     }
