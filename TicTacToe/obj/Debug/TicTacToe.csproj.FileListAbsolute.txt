@@ -1,0 +1,14 @@
+c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\obj\Debug\App.g.i.cs
+c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\Bin\Debug\ApplicationIcon.png
+c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\Bin\Debug\Background.png
+c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\Bin\Debug\TicTacToe.dll
+c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\Bin\Debug\TicTacToe.pdb
+c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\Bin\Debug\AppManifest.xaml
+c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\Bin\Debug\TicTacToe.xap
+c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\obj\Debug\MainPage.g.i.cs
+c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\obj\Debug\TicTacToe.g.resources
+c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\obj\Debug\TicTacToe.dll
+c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\obj\Debug\TicTacToe.pdb
+c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\obj\Debug\XapCacheFile.xml
+c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\Bin\Debug\Microsoft.Phone.Controls.dll
+c:\users\joel\documents\visual studio 2010\Projects\TicTacToe\TicTacToe\Bin\Debug\Microsoft.Phone.Controls.xml
