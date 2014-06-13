@@ -41,3 +41,4 @@ C:\SDCard\Joel\Git\tictactoe\TicTacToe\obj\Debug\TicTacToe.g.resources
 C:\SDCard\Joel\Git\tictactoe\TicTacToe\obj\Debug\TicTacToe.dll
 C:\SDCard\Joel\Git\tictactoe\TicTacToe\obj\Debug\TicTacToe.pdb
 C:\SDCard\Joel\Git\tictactoe\TicTacToe\obj\Debug\XapCacheFile.xml
+C:\SDCard\Joel\Git\tictactoe\TicTacToe\obj\Debug\menupage.g.cs
