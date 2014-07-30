@@ -14,6 +14,7 @@ using Microsoft.Phone.Controls;
 namespace TicTacToe {
     public partial class MainPage : PhoneApplicationPage {
         public static string turn = "X";
+        public static int num_turns = 0;
         public static Dictionary<string, TTT_Box> Boxes = new Dictionary<string, TTT_Box> {
             { "UL", new TTT_Box_Corner() }, { "UC", new TTT_Box_HoriEdge() }, { "UR", new TTT_Box_Corner() },
             { "ML", new TTT_Box_VertEdge() }, { "MC", new TTT_Box_Center() }, { "MR", new TTT_Box_VertEdge() },
@@ -57,6 +58,7 @@ namespace TicTacToe {
                     } else {
                         turn = "X";
                     }
+                    num_turns++;
                     return true;
                 }
 
@@ -67,6 +69,9 @@ namespace TicTacToe {
                     if (mark == box1.mark && mark == box2.mark) {
                         return true;
                     } else {
+                        if (num_turns == 9) {
+
+                        }
                         return false;
                     }
                 } catch {
@@ -117,24 +122,29 @@ namespace TicTacToe {
             if (Boxes[clicked.Name].set_mark()) {
                 clicked.Content = turn;
                 if (Boxes[clicked.Name].check_TTT()) {
-                    winner_popup.IsOpen = true;
+                    if (turn == "X") {
+                        ttt_popup_text.Text = "Winnner is X";
+                    } else {
+                        ttt_popup_text.Text = "Winner is O";
+                    }
+                    ttt_popup.IsOpen = true;
+                }
+                else if (num_turns == 9) {
+                    ttt_popup_text.Text = "Draw";
+                    ttt_popup.IsOpen = true;
                 }
             }
         }
 
-        private void winner_popup_btn(object sender, RoutedEventArgs e) {
+        private void ttt_popup_btn(object sender, RoutedEventArgs e) {
             UL.Content = ""; UC.Content = ""; UR.Content = "";
             ML.Content = ""; MC.Content = ""; MR.Content = "";
             DL.Content = ""; DC.Content = ""; DR.Content = "";
             foreach (KeyValuePair <string, TTT_Box> box in Boxes) {
                 box.Value.mark = null;
             }
-            if (turn == "X") {
-                winner_text.Text = "Winnner is O";
-            } else {
-                winner_text.Text = "Winner is X";
-            }
-            winner_popup.IsOpen = false;
+            num_turns = 0;
+            ttt_popup.IsOpen = false;
         }
     }
 }
