@@ -25,11 +25,11 @@ namespace TicTacToe {
         public MainPage() {
             InitializeComponent();
             //Define the TTT Grid/Connections
-            Boxes["UL"].Horizontal = new TTT_Box[] {Boxes["UC"], Boxes["UL"]}; Boxes["UL"].Vertical = new TTT_Box[] {Boxes["ML"], Boxes["DL"]}; Boxes["UL"].Diagnol = new TTT_Box[] {Boxes["MC"], Boxes["DR"]};
+            Boxes["UL"].Horizontal = new TTT_Box[] {Boxes["UC"], Boxes["UR"]}; Boxes["UL"].Vertical = new TTT_Box[] {Boxes["ML"], Boxes["DL"]}; Boxes["UL"].Diagnol = new TTT_Box[] {Boxes["MC"], Boxes["DR"]};
             Boxes["UC"].Horizontal = new TTT_Box[] {Boxes["UL"], Boxes["UR"]}; Boxes["UC"].Vertical = new TTT_Box[] {Boxes["MC"], Boxes["DC"]};
             Boxes["UR"].Horizontal = new TTT_Box[] {Boxes["UC"], Boxes["UL"]}; Boxes["UR"].Vertical = new TTT_Box[] {Boxes["MR"], Boxes["DR"]}; Boxes["UR"].Diagnol = new TTT_Box[] {Boxes["MC"], Boxes["DL"]};
             Boxes["ML"].Vertical = new TTT_Box[] {Boxes["UL"], Boxes["DL"]}; Boxes["ML"].Horizontal = new TTT_Box[] {Boxes["MC"], Boxes["MR"]};
-            Boxes["MC"].Vertical = new TTT_Box[] {Boxes["UC"], Boxes["MC"]}; Boxes["MC"].Horizontal = new TTT_Box[] {Boxes["ML"], Boxes["MC"]}; Boxes["MC"].Diagnol = new TTT_Box[] {Boxes["UL"], Boxes["DR"]}; Boxes["MC"].Diagnol2 = new TTT_Box[] {Boxes["UR"], Boxes["DL"]};
+            Boxes["MC"].Vertical = new TTT_Box[] {Boxes["UC"], Boxes["DC"]}; Boxes["MC"].Horizontal = new TTT_Box[] {Boxes["ML"], Boxes["MC"]}; Boxes["MC"].Diagnol = new TTT_Box[] {Boxes["UL"], Boxes["DR"]}; Boxes["MC"].Diagnol2 = new TTT_Box[] {Boxes["UR"], Boxes["DL"]};
             Boxes["MR"].Vertical = new TTT_Box[] {Boxes["UR"], Boxes["MR"]}; Boxes["MR"].Horizontal = new TTT_Box[] {Boxes["MC"], Boxes["ML"]};
             Boxes["DL"].Horizontal = new TTT_Box[] {Boxes["DC"], Boxes["DR"]}; Boxes["DL"].Vertical = new TTT_Box[] {Boxes["ML"], Boxes["UL"]}; Boxes["DL"].Diagnol = new TTT_Box[] {Boxes["MC"], Boxes["UR"]};
             Boxes["DC"].Horizontal = new TTT_Box[] {Boxes["DL"], Boxes["DR"]}; Boxes["DC"].Vertical = new TTT_Box[] {Boxes["MC"], Boxes["UC"]};
